@@ -1,7 +1,6 @@
-## Incia projeto 
+## Inicia projeto 
 
 [] - "npm init"
-
 
 ## Instalando Type Script
 
@@ -25,8 +24,7 @@
 [] - configurar copilador para executar toda vez que tiver alteração incluindo um scrpit em jackage.json  
         "strat":"tsc -w"
 
-
-## Evitando que o copilador gere arquivo JS tendo erro no TS.
+## Evitando que o compilador gere arquivo JS tendo erro no TS.
 [] - Para  evitar gerar o arquivo js com erro na  copilação arquivo deve incluir cuma configuração no tsconfig.json
 
     "noEmitOnError": true    incluir isso no compilerOptios ficando assim  agora 
@@ -44,7 +42,7 @@
 
 ## Configurando tipagem de dados:
 
-[] - previnir que ele coloque um tipo generico nos dados;
+[] - prevenir que ele coloque um tipo genérico nos dados;
     deve se configurar "noImplicitAny": true ficando assim: 
 
     {
@@ -61,5 +59,5 @@
 
 ## Usando JQuery no projeto:
 
-Tem que inportar e tem  que instalar as types como o comando: 
+Tem que importar e tem  que instalar as types como o comando: 
 "npm install @types/jquery --save-dev"
