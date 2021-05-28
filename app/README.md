@@ -58,3 +58,8 @@
         "app/ts/**/*"
     ]
 }
+
+## Usando JQuery no projeto:
+
+Tem que inportar e tem  que instalar as types como o comando: 
+"npm install @types/jquery --save-dev"
