@@ -4,14 +4,18 @@
   "main": "index.js",
   "dependencies": {
     "@types/jquery": "^3.5.5",
+    "concurrently": "^6.2.0",
     "jquery": "^3.6.0",
+    "lite-server": "^2.6.1",
     "typescript": "^4.3.2"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "tsc",
-    "start": "tsc -w"
+    "watch": "tsc -w",
+    "server": "lite-server --baseDir=app",
+    "start": "concurrently \"npm run watch\" \"npm run server\" \"node ./api/server.js\""
   },
   "keywords": [],
   "author": "",

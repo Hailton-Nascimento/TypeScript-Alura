@@ -1,37 +1,27 @@
-class Negociacao {
-    private _data: Date;
-    private _quantidade: number;
-    private _valor: number;
+import { MeuObjeto } from './MeuObjeto';
 
+export class Negociacao implements MeuObjeto<Negociacao> {
+    constructor(readonly data: Date, readonly quantidade:number, readonly valor:number) { }
 
-    constructor(data: Date, quantidade:number, valor:number) {
- 
-        this._data = data;
-        this._quantidade = quantidade;
-        this._valor = valor;
-    }
-
-    public get data(): Date {
-        return this._data;
-    }
-    public set data(value: Date) {
-        this._data = value;
-    }
-    public get quantidade(): number {
-        return this._quantidade;
-    }
-    public set quantidade(value: number) {
-        this._quantidade = value;
-    }
-
-    public get valor(): number {
-        return this._valor;
-    }
-    public set valor(value: number) {
-        this._valor = value;
-    }
     public get volume():number {
 
-        return this._quantidade * this._valor;
+        return this.quantidade * this.valor;
+    }
+    
+    paraTexto(): void {
+        console.log('-- paraTexto --');
+        console.log(
+            `Data: ${this.data}
+            Quantidade: ${this.quantidade}, 
+            Valor: ${this.valor}, 
+            Volume: ${this.volume}`
+        );
+    }
+    
+    ehIgual(negociacao: Negociacao): boolean {
+
+        return this.data.getDate() == negociacao.data.getDate()
+            && this.data.getMonth() == negociacao.data.getMonth()
+            && this.data.getFullYear() == negociacao.data.getFullYear();
     }
 }

@@ -1,6 +1,6 @@
+import { View } from "./View";
 
-
-class MensagemView extends View<String> {
+export class MensagemView extends View<String> {
  
     template(model: string): string {
 

@@ -1,28 +1,33 @@
-class Negociacao {
-    constructor(data, quantidade, valor) {
-        this._data = data;
-        this._quantidade = quantidade;
-        this._valor = valor;
-    }
-    get data() {
-        return this._data;
-    }
-    set data(value) {
-        this._data = value;
-    }
-    get quantidade() {
-        return this._quantidade;
-    }
-    set quantidade(value) {
-        this._quantidade = value;
-    }
-    get valor() {
-        return this._valor;
-    }
-    set valor(value) {
-        this._valor = value;
-    }
-    get volume() {
-        return this._quantidade * this._valor;
-    }
-}
+System.register([], function (exports_1, context_1) {
+    "use strict";
+    var Negociacao;
+    var __moduleName = context_1 && context_1.id;
+    return {
+        setters: [],
+        execute: function () {
+            Negociacao = class Negociacao {
+                constructor(data, quantidade, valor) {
+                    this.data = data;
+                    this.quantidade = quantidade;
+                    this.valor = valor;
+                }
+                get volume() {
+                    return this.quantidade * this.valor;
+                }
+                paraTexto() {
+                    console.log('-- paraTexto --');
+                    console.log(`Data: ${this.data}
+            Quantidade: ${this.quantidade}, 
+            Valor: ${this.valor}, 
+            Volume: ${this.volume}`);
+                }
+                ehIgual(negociacao) {
+                    return this.data.getDate() == negociacao.data.getDate()
+                        && this.data.getMonth() == negociacao.data.getMonth()
+                        && this.data.getFullYear() == negociacao.data.getFullYear();
+                }
+            };
+            exports_1("Negociacao", Negociacao);
+        }
+    };
+});
